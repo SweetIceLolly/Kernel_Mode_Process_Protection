@@ -31,7 +31,7 @@ Part of the code is copied from [my first kernel-mode driver](https://github.com
 
 [device.c](protection/device.c): This file defines device-related functions. `SetupIoDevice` creates an IO device to communicate with the user-mode driver loader.
 
-[major_functions.c](protection/major_functions.c]: This file defines major functions handler for `IRP_MJ_*`. Specifically, `IRP_MJ_CREATE` , `IRP_MJ_CLOSE` and `IRP_MJ_WRITE` are handled. The program will use `handle_buffer_message` to process the message received from `IRP_MJ_WRITE`.
+[major_functions.c](protection/major_functions.c): This file defines major functions handler for `IRP_MJ_*`. Specifically, `IRP_MJ_CREATE` , `IRP_MJ_CLOSE` and `IRP_MJ_WRITE` are handled. The program will use `handle_buffer_message` to process the message received from `IRP_MJ_WRITE`.
 
 [major_functions.c](protection/major_functions.c): Thie file defines `handle_buffer_message` to process the message received from `IRP_MJ_WRITE`. Depending on the command received, the driver will call `enable_protection` or `disable_protection`.
 
